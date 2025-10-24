@@ -1,9 +1,19 @@
 """ Problem Description """
-
-""" Write a Python program that:"""
-# After analyzing all sentences:
-# -- Print the average number of words per sentence.
-# -- Print the sentence with the most words.
+# Write a Python program that:
+""" 1. Accepts five sentences from the user ( or you can use a predefined list for testing). """
+""" 2. Stores them in a list. """
+""" 3. Creates a function called analyze_sentence(sentence) that: """
+# --- Counts the number of words in the sentence.
+# --- Counts the number of unique words(case-insensitive).
+# --- Finds the longest word in the sentence.
+""" 4. For each sentence, print: """
+# --- The sentence itself
+# --- Total word count
+# --- Unique word count
+# --- Longest word
+""" 5. After analyzing all sentences: """ 
+# --- Print the average number of words per sentence.
+# --- Print the sentence with the most words.
 
 
 # Get number of sentence to analyze
