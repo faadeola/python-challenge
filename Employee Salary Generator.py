@@ -1,3 +1,4 @@
+""" Overview """
 # Write a Python program that:
 # Stores information about employees in a list of dictionaries.
 
@@ -14,13 +15,30 @@
 # The average salary per department.
 # Any employee(s) who qualify for a 5 % bonus (if they’ve worked for ≥ 5 years).
 
+
+""" Test case """
+# {"name": "Alice Johnson", "department": "Sales", "salary": 4500, "years_of_service": 6},
+# {"name": "Bob Smith", "department": "IT", "salary": 5200, "years_of_service": 3},
+# {"name": "Charlie Brown", "department": "HR", "salary": 4100, "years_of_service": 5},
+# {"name": "Diana Prince", "department": "Sales", "salary": 4800, "years_of_service": 8},
+# {"name": "Ethan Hunt", "department": "IT", "salary": 6000, "years_of_service": 10},
+# {"name": "Fiona Wells", "department": "HR", "salary": 3900, "years_of_service": 2}
+
+
 """ =========================================================================================================== """
 
 try:
+    # Get number of employees needed for this analysis
     numEmployee = int(
         input("Number of employee information to be provided: \n"))
-    bonusYear = int(input(
-        "How many years of service does an employee needs to qualify for bonus?: \n"))
+
+    """ Check if number of employee is not empty"""
+    if numEmployee < 1:
+        print("Number of employee can not be zero(0)!")
+        exit()
+    else:
+        bonusYear = int(input(
+            "How many years of service does an employee needs to qualify for bonus?: \n"))
 
 except ValueError:
     print("You entered a wrong value, it must be an integer")
@@ -29,6 +47,7 @@ else:
     employeeData = []  # Hold employeed records
     employeeSalary = []  # Hold Salary information for employees
 
+    # Get informations about employees
     for i in range(numEmployee):
         name = input(f"Name of employee {i+1}: \n").title().strip()
         department = input(f"{name}'s Department: \n").strip()
@@ -114,9 +133,15 @@ else:
 
     def empBonus():
         """ Any employee(s) who qualify for a 5% bonus (if they’ve worked for ≥ bonusYears specified) """
-        for emp in employeeData:
-            if emp["years_of_service"] >= bonusYear:
-                print(f"--> {emp["name"]}")
+        qualified = [emp['name']
+                     for emp in employeeData if emp["years_of_service"] >= bonusYear]
+
+        # print out qualified name
+        if len(qualified) > 0:
+            for name in qualified:
+                print(f"--> {name}")
+        else:
+            print("No employee qualified")
 
     """ Get values from all functions for analysis"""
     totalSalary, avgSalary = salaryEmployee()
@@ -147,12 +172,3 @@ else:
     # Prints employees eligible for 5% bonus
     print(f"Employees Eligible for Bonus:")
     empBonus()  # -- Function to calculate eligible employees
-
-
-# Test case
-# {"name": "Alice Johnson", "department": "Sales", "salary": 4500, "years_of_service": 6},
-# {"name": "Bob Smith", "department": "IT", "salary": 5200, "years_of_service": 3},
-# {"name": "Charlie Brown", "department": "HR", "salary": 4100, "years_of_service": 5},
-# {"name": "Diana Prince", "department": "Sales", "salary": 4800, "years_of_service": 8},
-# {"name": "Ethan Hunt", "department": "IT", "salary": 6000, "years_of_service": 10},
-# {"name": "Fiona Wells", "department": "HR", "salary": 3900, "years_of_service": 2}
