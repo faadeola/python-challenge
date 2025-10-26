@@ -6,7 +6,7 @@
 # "name" → employee name
 # "department" → e.g., Sales, IT, HR, etc.
 # "salary" → monthly salary(integer)
-# "years_of_service" → number of years they’ve worked
+# "yearOfService" → number of years they’ve worked
 
 """Performs analysis to find:"""
 # The average salary across all employees.
@@ -17,12 +17,12 @@
 
 
 """ Test case """
-# {"name": "Alice Johnson", "department": "Sales", "salary": 4500, "years_of_service": 6},
-# {"name": "Bob Smith", "department": "IT", "salary": 5200, "years_of_service": 3},
-# {"name": "Charlie Brown", "department": "HR", "salary": 4100, "years_of_service": 5},
-# {"name": "Diana Prince", "department": "Sales", "salary": 4800, "years_of_service": 8},
-# {"name": "Ethan Hunt", "department": "IT", "salary": 6000, "years_of_service": 10},
-# {"name": "Fiona Wells", "department": "HR", "salary": 3900, "years_of_service": 2}
+# {"name": "Alice Johnson", "department": "Sales", "salary": 4500, "yearOfService": 6},
+# {"name": "Bob Smith", "department": "IT", "salary": 5200, "yearOfService": 3},
+# {"name": "Charlie Brown", "department": "HR", "salary": 4100, "yearOfService": 5},
+# {"name": "Diana Prince", "department": "Sales", "salary": 4800, "yearOfService": 8},
+# {"name": "Ethan Hunt", "department": "IT", "salary": 6000, "yearOfService": 10},
+# {"name": "Fiona Wells", "department": "HR", "salary": 3900, "yearOfService": 2}
 
 
 """ =========================================================================================================== """
@@ -52,14 +52,14 @@ else:
         name = input(f"Name of employee {i+1}: \n").title().strip()
         department = input(f"{name}'s Department: \n").strip()
         salary = int(input(f"{name}'s Salary: \n"))
-        years_of_service = int(input(f"{name}'s years in service: \n"))
+        yearOfService = int(input(f"{name}'s years in service: \n"))
 
         # store each information in a dictionary
         employee_dic = {
             "name": name,
             "department": department,
             "salary": salary,
-            "years_of_service": years_of_service
+            "yearOfService": yearOfService
         }
 
         # store each employee record in a general data
@@ -134,7 +134,7 @@ else:
     def empBonus():
         """ Any employee(s) who qualify for a 5% bonus (if they’ve worked for ≥ bonusYears specified) """
         qualified = [emp['name']
-                     for emp in employeeData if emp["years_of_service"] >= bonusYear]
+                     for emp in employeeData if emp["yearOfService"] >= bonusYear]
 
         # print out qualified name
         if len(qualified) > 0:
