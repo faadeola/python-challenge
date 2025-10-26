@@ -1,2 +1,2 @@
 # python-challenge
-This repository contains python files of different task given by an AI ( Acting as an python instructor) for 10 consecutive days.
+This repository contains Python files of various tasks assigned by an AI (Acting as a Python instructor) over 10 consecutive days.
