@@ -72,9 +72,8 @@ try:
         avgScore = totalScore/numStud
 
         # Get Max and Min of all scores
-        sortedScore = sorted(allScores)
-        maxScore = sortedScore[-1]
-        minScore = sortedScore[0]
+        maxScore = max(allScores)
+        minScore = min(allScores)
 
         # Get the name(s) of the top student(s)
         def top_student():
