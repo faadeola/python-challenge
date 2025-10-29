@@ -63,5 +63,3 @@ avgResult = avgNumber(number_list)  # returns average of the whole numbers
 
 # print outcome of user's guess
 print(guess_response())
-
-print(number_list_sorted)
